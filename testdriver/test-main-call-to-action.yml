@@ -1,0 +1,18 @@
+version: 4.1.13
+steps:
+  - prompt: Identify the main call to action button on the page.
+    commands:
+      - command: hover-text
+        text: AGREE
+        description: main call to action button in the disclaimer popup
+        action: click
+  - prompt: >-
+      Assert that the button is visible and clickable.  # Use the content of the
+      file from the environment
+    commands:
+      - command: hover-text
+        text: Accept all cookies
+        description: main call to action button in the cookie consent popup
+        action: hover
+      - command: assert
+        expect: the "Accept all cookies" button is visible and clickable
