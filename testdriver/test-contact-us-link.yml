@@ -1,0 +1,20 @@
+version: 4.1.13
+steps:
+  - prompt: Locate the "Contact Us" link on the webpage.
+    commands:
+      - command: hover-text
+        text: Contact Us
+        description: link in the header
+        action: click
+  - prompt: Click on the "Contact Us" link.
+    commands:
+      - command: hover-text
+        text: Contact Us
+        description: link in the header
+        action: click
+  - prompt: >-
+      Assert that the contact page opens successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: contact form is visible
