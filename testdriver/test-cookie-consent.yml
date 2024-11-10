@@ -1,0 +1,18 @@
+version: 4.1.13
+steps:
+  - prompt: Assert that the cookie consent message is displayed.
+    commands:
+      - command: assert
+        expect: the cookie consent message is displayed
+  - prompt: Click "Accept all cookies."
+    commands:
+      - command: hover-text
+        text: Accept all cookies
+        description: button to accept all cookies
+        action: click
+  - prompt: >-
+      Assert that the cookie consent message disappears.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the cookie consent message is not displayed
