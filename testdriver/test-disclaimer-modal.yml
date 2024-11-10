@@ -1,0 +1,18 @@
+version: 4.1.13
+steps:
+  - prompt: Assert that the disclaimer modal is visible upon loading the page.
+    commands:
+      - command: assert
+        expect: the disclaimer modal is visible
+  - prompt: Click the "Agree" button on the disclaimer modal.
+    commands:
+      - command: hover-text
+        text: AGREE
+        description: agree button on the disclaimer modal
+        action: click
+  - prompt: >-
+      Assert that the modal closes successfully.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the disclaimer modal is not visible
